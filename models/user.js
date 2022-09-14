@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   user.init({
-    
     name: {
       type: DataTypes.STRING,
       validate: {
@@ -36,12 +35,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       validate: {
         len: {
-          args: [8,99],
-          msg: 'Password must be between 8 and 99 characters'
+          args: [6,12],
+          msg: 'Password must be between 6 and 12 characters'
         }
       }
     },
-    age: DataTypes.INTEGER
+  
   }, {
     sequelize,
     modelName: 'user',
